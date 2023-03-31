@@ -1,7 +1,9 @@
 package com.example.explorer;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
@@ -21,9 +23,10 @@ import java.util.Scanner;
 
 public class GameActivity extends AppCompatActivity {
     private JSONObject data;
-    private int location = 0;
+    private int location = -1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d("APP","CREATE");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
         String fileName = getIntent().getStringExtra("fileName");
@@ -44,7 +47,8 @@ public class GameActivity extends AppCompatActivity {
         }
         String newtitle = String.format(getString(R.string.app_title_name),getString(R.string.app_name),worldtitle);
         setTitle(newtitle);
-        setLocation(startLocation);
+        location = startLocation;
+        setLocation(location);
     }
     protected void setLocation(int newLoc) {
         location = newLoc;
@@ -82,7 +86,7 @@ public class GameActivity extends AppCompatActivity {
                 });;
                 buttonsContainer.addView(button);
             }
-            Boolean isFinal = locationObject.getBoolean("final");
+            boolean isFinal = locationObject.getBoolean("final");
             if (isFinal) {
                 Button button = new Button(this);
                 button.setText(getString(R.string.won_game));
@@ -98,5 +102,21 @@ public class GameActivity extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+    }
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        // put string value
+        Log.d("APP","SAVE");
+        outState.putInt("location",location);
+        super.onSaveInstanceState(outState);
+    }
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        // get values from saved state
+        Log.d("APP","RESTORE");
+        int reloc=savedInstanceState.getInt("location");
+        location = reloc;
+        super.onRestoreInstanceState(savedInstanceState);
+        setLocation(reloc);
     }
 }
