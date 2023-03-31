@@ -1,81 +1,81 @@
 {
-  "title": "Le labyrinthe de test",
+  "title": "The test maze",
   "start": 0,
   "places": [
     {
-      "name": "L'entrée",
-      "desc": "Vous êtes devant une porte en chêne massif. Vous avez faim.",
+      "name": "The entrance",
+      "desc": "You are in front of a massive oak door. You are hungry.",
       "image": "place0",
       "final": false,
       "actions": [
         {
-          "action_name":"Dormir",
+          "action_name":"Sleep",
           "next": 1
         },
         {
-          "action_name":"Ouvrir",
+          "action_name":"Open the door",
           "next": 2
         }
       ]
     },
     {
-      "name": "La sieste",
-      "desc": "Vous faites une petite sieste. C'est reposant. Mais ça ne nourrit pas.",
+      "name": "The nap",
+      "desc": "You take a small nap. It's resting. But you're still hungry.",
       "image": "place1",
       "final": false,
       "actions": [
         {
-          "action_name":"Se réveiller",
+          "action_name":"Wake up",
           "next": 0
         }
       ]
     },
     {
-      "name": "Le couloir",
-      "desc": "Vous êtes dans un couloir. Vous devez soit aller à gauche vers le salon, soit aller à droite vers la chambre.",
+      "name": "The corridor",
+      "desc": "You are in a corridor. You can either go to the left for the dining room, or to the right for the bedroom.",
       "image": "place2",
       "final": false,
       "actions": [
         {
-          "action_name":"Le salon",
+          "action_name":"The dining room",
           "next": 4
         },
         {
-          "action_name":"La chambre",
+          "action_name":"The bedroom",
           "next": 3
         }
       ]
     },
     {
-      "name": "La chambre",
-      "desc": "La chambre comporte un lit, mais aucune trace de nourriture.",
+      "name": "The bedroom",
+      "desc": "The bedroom has a bed, but no food is in sight.",
       "image": "place3",
       "final": false,
       "actions": [
         {
-          "action_name":"Je retourne d'où je viens.",
+          "action_name":"Go back from where I come.",
           "next": 2
         }      ]
     },
     {
-      "name": "Le salon",
-      "desc": "Vous êtes dans un grand salon. Il y a une assiette de carottes sur la table.",
+      "name": "The dining room",
+      "desc": "You are in a large dining room. There is a large plate of carrots on the table.",
       "final": false,
       "image": "place4",
       "actions": [
         {
-          "action_name":"Le repas",
+          "action_name":"The meal",
           "next": 5
         },
         {
-          "action_name":"Le couloir",
+          "action_name":"The corridor",
           "next": 2
         }
       ]
     },
     {
-      "name": "Le repas",
-      "desc": "Vous mangez l'assiette de carottes. Vous n'avez plus faim. Bravo !",
+      "name": "The meal",
+      "desc": "You eat your plate of carrots. You are no more hungry. Bravo !",
       "image": "place5",
       "final": true,
       "actions": []
