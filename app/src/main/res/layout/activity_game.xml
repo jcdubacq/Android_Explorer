@@ -11,9 +11,10 @@
         android:id="@+id/locationName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
         android:textAlignment="center"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/locationImage"
@@ -25,7 +26,7 @@
         android:adjustViewBounds="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/locationName" />
+        app:layout_constraintTop_toBottomOf="@+id/locationName" />
 
     <TextView
         android:id="@+id/locationDesc"
@@ -48,6 +49,6 @@
         android:layout_marginTop="16dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/locationDesc"></LinearLayout>
+        app:layout_constraintTop_toBottomOf="@id/locationDesc" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
