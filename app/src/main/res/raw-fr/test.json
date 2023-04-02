@@ -43,6 +43,10 @@
         {
           "action_name":"La chambre",
           "next": 3
+        },
+        {
+          "action_name":"L'extérieur",
+          "next": 0
         }
       ]
     },

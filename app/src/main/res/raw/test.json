@@ -15,7 +15,12 @@
         {
           "action_name":"Open the door",
           "next": 2
+        },
+        {
+          "action_name":"Go back outside",
+          "next": 0
         }
+
       ]
     },
     {
