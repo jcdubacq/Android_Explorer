@@ -12,13 +12,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button mButtonStartGame = findViewById(R.id.button);
-        mButtonStartGame.setOnClickListener(view -> startGameActivity());
+        Button button = findViewById(R.id.button);
+        // If the method has signature (View v), one can use a direct method reference
+        button.setOnClickListener(this::startGameActivity);
     }
-    private void startGameActivity() {
+    public void startGameActivity(View view) {
         Intent intent;
         intent = new Intent(this, GameActivity.class);
-        intent.putExtra("fileName", "test.json"); // Ajoutez votre nom de fichier ici
+        intent.putExtra("fileName", "test");
         startActivity(intent);
     }
 }
